@@ -64,10 +64,10 @@ Make sure to complete the six steps below:
 Essentially, what we've done here is allow Zotero to communicate with Visual Code and Markdown. We have also prepared the process of exporting citations and creating nice bibliographies. 
 
 ### Set up Pandoc
-<!-- In the following lines, we describe how to create a text anchor which allows to navigate directly to a specific area of the document (in this case the VS-code pandoc paragraph of a prior section (check the <a=name="XXitem">: </a> syntax there). Note that the automatic navigation does not work within VScode itself but it does everywhere else-->
-
+<!-- In the following lines, we describe how to create a text anchor which allows to navigate directly to a specific area of the document (in this case the VS-code pandoc paragraph of a prior section (check the <a=name="XXitem">: </a> syntax there). Note that the automatic navigation does not work within VScode itself but it does everywhere else. 
+We also see that we can use exactly the main technique to navigate to one of your title markup. To do so, we just need to write down the title in small caps and to replace spaces by hyphems. Simple! -->
 For Pandoc, the process is really straightforward. Once you've installed it, the only thing we need to do is to tell our **VS-code pandoc** extension (if you forgot its role, check again [Set up Visual Code](#VSpandocItem)) how to generate citations/bibliography when exporting to Word (similarly process are described at the end of this tutorial for exporting to other format). 
-***Note that this extension is not required if you plan to export your document using the command line only*** (in this case just go directly to the [corresponding subsection](#commandexport)). 
+***Note that this extension is not required if you plan to export your document using the command line only*** (in this case just go directly to the [corresponding subsection](#document-generation-using-the-command-line)). 
 
 <!--Here you can see how to render inline code with Markdown, in between the backquote symbol ` (don't confuse it with the frontquote ´ !)-->
 So, let's do as follow: 
@@ -108,7 +108,7 @@ title: 'Collaborative academic writing tutorial'
 3. Click inside the *example.md* (in the main window) and do Ctrl+K and then press P. You will see a the top a drop down menu asking you in which format you want to save your document. Choose Word document (.docx). If you have Word installed on your computer you should see a Word window opening with a bibliography
 Again, be <span style="color:red">consistent</span> with the actual path at which your exported .bib file is located.
 
-#### Document generation using the <a name="commandexport">command line</a>
+#### Document generation using the command line
 
 Open a command line / terminal, `cd` to the directory containing *example.md* and type `pandoc example.md --bibliographic=C://whateverfoldername/zoteroMyLibrairy.bib --citeproc -o example.docx`
 
