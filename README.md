@@ -1,12 +1,12 @@
 
 
-Academics spend a lot of their time writing papers, proposals, reports and other documents. Many are happy with traditional workflows combining commercial word processors (e.g. Word) and a bibliography solution such as Zotero or Mendeley. 
-But academic writing is often collaborative, so that a lot of researchers actually use Google Docs (and its bibliography plugins) rather than these traditional offline solutions.
-Yet, Google Docs does not offer the best guarantees when it comes to privacy, and it is rather limited when it comes to templating, writing equations or simply using it offline. By reading step by step the document hereafter, you may set up an alternative writing workflow using Markdown. 
+Academics spend a lot of their time writing papers, proposals, reports and other documents. Many are happy with traditional workflows combining a commercial word processors (e.g. Word) with a bibliography software such as Zotero or Mendeley. 
+But academic writing is often collaborative and a lot of researchers actually use Google Docs (with some plugins) to do so.
+The problem is that Google Docs offer little guarantees when it comes to privacy, and they are rather limited when it comes to templating, writing equations or simply using it offline. Moreover, Google Docs still constitute one more interface in the daily life of academics (and not the best). By reading step by step the document hereafter, you may set up an alternative writing workflow using Markdown, which will allow you (amongst others, to write publication-ready documents from your preferred code editor).
 
 <!--To start, we learn how to write down a :blush: smiley. Top priority-->
 This tutorial is obviously more complex than just logging in Google and opening a Google Doc, but it guides and explains you each step and it might still be of interest for those who want a more modern and efficient, privacy-conscious workflow, enabling real-time collaborative writing. 
-Carefully implemented, this pipeline might be particularly useful for researchers who wish to move away from Google Docs for whatever reason without losing functionality (in fact, they will gain functionality). Let's not forget that careers and labs lasts decades and that good workflows can save you from weeks or months of (cumulative) suboptimal procedures :blush:. 
+Carefully implemented, this pipeline might be particularly useful for researchers who wish to move away from Google Docs for whatever reason without losing functionality (in fact, they will gain functionality). Let's not forget that careers and labs last for decades and that good workflows can save you from weeks or months of (cumulative) suboptimal procedures :blush:. 
 
 <!--Here, the markup for bold fonts-->
 Last but not least, this pipeline relies entirely on **free, open-source** software! 
@@ -29,7 +29,7 @@ However, as efficient as it can be, Markdown alone is not sufficient for academi
 5. Along the way, we may install other optional software such as [MikTex](https://miktex.org/) to facilitate the writing of equation and export to PDF, or [Mermaid](https://mermaid.js.org/) to write down graphs in Markdown.
 
 <!--Here you can see an example of strong italic font (in between the *** *** symbols)=-->
-If you open the current README.md file using an IDE (like Visual Code!), you'll find a lot of comments that explain how Markdown was used to write it. You'll find examples for most markup techniques. If you are reading this document document from a browser, all this comments are hidden. If you're already curious to check out the simplicity and neatness of raw Markdown files you can look [here](https://raw.githubusercontent.com/romainligneul/modern-collaborative-writing/main/README.md) (note that the syntax ext will look ***much better*** and clearer if you create an empty example.md file in VS code and that you copy paste the raw Markdown into it!).
+If you open the current README.md file using an IDE (like Visual Code), you'll find a lot of comments that explain how Markdown was used to write it. You'll find examples for most markup techniques. If you are reading this document document from a browser, all this comments are hidden. If you're already curious to check out the simplicity and neatness of raw Markdown files you can look [here](https://raw.githubusercontent.com/romainligneul/modern-collaborative-writing/main/README.md) (note that the syntax ext will look ***much better*** and clearer if you create an empty example.md file in VS code and that you copy paste the raw Markdown into it!).
 
 ## Installation and configuration
 
@@ -45,6 +45,8 @@ Anyway, at this stage, what matter is more to install the adequate extensions fo
 - [VScode-pandoc](https://marketplace.visualstudio.com/items?itemName=DougFinke.vscode-pandoc)<a name="VSpandocItem">:</a> a useful extension to automatize the exportation of documents written in Pandoc.
 - [Citation Picker for Zotero](https://marketplace.visualstudio.com/items?itemName=mblode.zotero): a small utility to grab references from Zotero and include them in your Markdown files, exactly as you would do in Word or Google Docs.
 - (for real time collaborative writing) [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare): a very fancing real-time collaborating app for Visual Code. Note that, unlike collaboration based on Google Docs, Live Share can be set to work **exclusively** with direct connection (no data or text transits through the cloud, Internet is only required to log into the service). Live Share is therefore compatible with the privacy demands that some of us might worry about.
+
+Note that this tutorial proposes to use Visual Code as it really gives full functionality, but Markdown/Pandoc can also be used with other editors (e.g. Matlab IDE, Spyder, PyCharm, Notepad++, etc.). In this case, exportation (we'll say more about this step in below) would only be done from the command line and another widget (which may not yet exist) would be necessarily to get the easiest access to Zotero citation.
 
 ### Set up Zotero
 
@@ -76,7 +78,7 @@ So, let's do as follow:
 3. Scroll to the line Docx Opt String and copy-paste `--lua-filter=C://whateverfoldername/zotero.lua --metadata=zotero_scannable_cite:false --metadata=zotero_client:zotero --metadata=zotero_csl_style:apa --metadata=zotero_transferable:true` in it.
 
 <!--Here, you can see how to apply color in Markdown. In my view, color management is only of the only weakness of Markdown, in the sense that it requires a lot of HTML characters for result that is simpler to reach using Word. But colorful texts are annoying anyway (plus there are ways of defining color themes in templates, which reduces quite a lot the amount of characters required!)-->
-Note that `--lua-filter=C://whateverfoldername/zotero.lua` should be <span style="color:red">consistent</span> with the path you've actually chosen (you probably did not name the folder whateverfoldername, so adjust accordingly! :sweat_smile:)
+Note that `--lua-filter=C://whateverfoldername/zotero.lua` should be <span style="color:red">consistent</span> with the path you've actually chosen (you probably did not name the folder "whateverfoldername", so adjust accordingly! :sweat_smile:)
 Essentially, these launch parameters will allow you to export **modifiable** citations and bibliography from Zotero to Word passing by Markdown. Note also that ```--metadata=zotero_csl_style:apa``` defines your default citation style. You will have 3 ways of changing style: (i) by changing this specific command (to ```--metadata=zotero_csl_style:nature``` for example), (ii) by using command line exportation, or (iii) by changing it after exporting to Word for the final touches (just before submitting to a journal or an Rxiv platform, for example).
 
 At this point, you are 95% set to write in Markdown by yourself and generate clean documents. You have two main ways to do so. Let's assume you are writing a file named *example.md*
@@ -119,8 +121,4 @@ This second command should create exactly the same document as that generated us
 
 ## Set up Live Share for collaborative writing
 
-At this point, you know almost everything you need for single-author writing. At the very end of this tutorial, we'll see how to export to PDF and we'll discuss a few more cool functionalities of Markdown but the priority (and the promess) of this tutorial is to set up a **real-time collaborative writing** solution. If you are not interested in that,   
-
-
-1. Install markdownlint: <https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint>
-2. [@ligneul2019]
+At this point, you know almost everything you need for single-author writing. At the very end of this tutorial, we'll see how to export to PDF and we'll discuss a few more cool functionalities of Markdown but the priority (and the promess) of this tutorial is to set up a **real-time collaborative writing** solution. 
