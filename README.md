@@ -7,9 +7,11 @@ Academics spend a lot of their time writing papers, proposals, reports and other
 But academic writing is often collaborative, so that a lot of researchers actually use Google Docs (and its bibliography plugins) rather than these traditional offline solutions.
 Yet, Google Docs does not offer the best guarantees when it comes to privacy, and it is rather limited when it comes to templating, writing equations or simply using it offline.
 
-This tutorial is obviously a lot more complex than logging in Google and open a Google Doc, but it might be of interest for those who look for a more modern and efficient, privacy-conscious workflow, enabling real-time collaborative writing. Carefully implemented, this pipeline might be particularly useful for researchers who wish to move away from Google Docs for whatever reason without losing functionality (in fact, they will gain functionality). Last but not least, this pipeline relies entirely on **free, open-source** software!
+This tutorial is obviously more complex than just logging in Google and opening a Google Doc, but it guides and explains you each step and it might still be of interest for those who want a more modern and efficient, privacy-conscious workflow, enabling real-time collaborative writing. Carefully implemented, this pipeline might be particularly useful for researchers who wish to move away from Google Docs for whatever reason without losing functionality (in fact, they will gain functionality). Let's not forget that careers and labs lasts decades and that good workflows can save you from weeks or months of (cumulative) suboptimal procedures :blush:. 
 
-The tutorial is divided in several parts: introduction, software installation and configuration, test and comments.
+Last but not least, this pipeline relies entirely on **free, open-source** software! 
+
+The tutorial itself is divided in several parts: introduction, software installation and configuration, test and comments.
 
 ## Introduction
 Markdown is at the heart of our approach. It is *the* markup language that allows extremely quick and reproducible writing. Markdown is mostly defined by its syntax, where different symbols activate different functions. For example, the symbol # can be used to create titles of different size. # Will produce a huge title, whereas #### will produce a much smaller title. Symbols like \*, \_ , \~ or \^ allow to write bold, italics, subscript or superscript characters. Messaging apps like What's App also use some of these syntactic shortcuts, but Markdown goes much farther and allows to create citations, URL links, tables, lists, figures, etc using a similar approach. The [Markdown website](https://www.markdownguide.org/) is a good place to get started. Note that Github and many other Web development tools apps use Markdown routinely. Furthermore, Markdown allows templating much like conventional word processors (i.e. choice of fonts, font style, color, etc.).
@@ -53,8 +55,8 @@ Make sure to complete the six steps below:
 Essentially, what we've done here is allow Zotero to communicate with Visual Code and Markdown. We have also prepared the process of exporting citations and creating nice bibliographies. 
 
 ### Set up Pandoc
-<!--- Here, we have an exa -->
-For Pandoc, the process is really straightforward. Once you've installed it, the only thing we need to do is to tell our [**VS-code pandoc**](#VSpandocItem) extension (if you forgot its role, check again the "Set up Visual Code" section)
+<!-- In the following lines, we describe how to create a text anchor which allows to navigate directly to a specific area of the document (in this case the VS-code pandoc paragraph of a prior section (check the <a=name="XXitem">: </a> syntax there). Note that the automatic navigation does not work within VScode itself but it does everywhere else-->
+For Pandoc, the process is really straightforward. Once you've installed it, the only thing we need to do is to tell our **VS-code pandoc** extension (if you forgot its role, check again [Set up Visual Code](#VSpandocItem)) how to generate citations/bibliography when exporting to Word (similarly process are described at the end of this tutorial for exporting to other format). 
 
 
 1. Install markdownlint: <https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint>
