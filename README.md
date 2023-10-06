@@ -13,7 +13,6 @@ Last but not least, this pipeline relies entirely on **free, open-source** softw
 
 The tutorial itself is divided in several parts: introduction, software installation and configuration, test and comments.
 
-
 <!--Here you see how to make an h2 title :) other title sizes are # ## ### #### ##### ######. By the way, you might have noticed that Markdown comments are totally ignored: you won't even see empty lines in place of them in the rendered version. How convenient to exchange diverse feedback, ideas and references with colleagues, without cluttering the output!-->
 ## Introduction
 
@@ -22,10 +21,10 @@ Markdown is at the heart of our approach. It is *the* markup language that allow
 
 <!--Here, you can see how easy it is to generate a numbered list in Markdown! The leading 1. 2. etc are sufficient! -->
 However, as efficient as it can be, Markdown alone is not sufficient for academic writing.
-1. First of all, one needs to chose an editor to create and write .md files. For this, we will use [Visual Code](https://code.visualstudio.com/) for its stability and its versatility (thanks to its amazing set of extensions).
-2. Second, one needs to install and configure some tool to manage citations and bibliographies. For this, we will use [Zotero](https://www.zotero.org/) which has also an excellent support and great extensions.
-3. Third, one needs to install and configure some tool to export .md Markdown files to other formats such as .pdf, .dox or event .html files. For this, we will use the universal document converter [Pandoc](https://pandoc.org/).
-4. Fourth, one needs to set up the LiveShare extension of Visual Code in order to allow real-time collaborative writing. This extension also allows real-time collaborative coding. It is very well maintained by Microsoft and it is free.
+1. First of all, we need an editor to create and write .md files. For this, we will use [Visual Code](https://code.visualstudio.com/) for its stability and its versatility (thanks to its amazing set of extensions).
+2. Second, we need to install and configure some tool to manage citations and bibliographies. For this, we will use [Zotero](https://www.zotero.org/) which has also an excellent support and great extensions.
+3. Third, we need to install and configure a tool to export .md Markdown files to other formats such as .pdf, .dox or event .html files. For this, we will use the universal document converter [Pandoc](https://pandoc.org/).
+4. Fourth, we will need to set up a pipeline to collaborate efficiently using Github and the LiveShare extension of Visual Code in order to allow real-time collaborative writing (the same approach also allows real-time collaborative coding). It is very well maintained by Microsoft and it is free.
 5. Along the way, we may install other optional software such as [MikTex](https://miktex.org/) to facilitate the writing of equation and export to PDF, or [Mermaid](https://mermaid.js.org/) to write down graphs in Markdown.
 
 <!--Here you can see an example of strong italic font (in between the *** *** symbols)=-->
@@ -119,6 +118,13 @@ By exporting in this way, you won't have a modifiable Zotero bibliography. But i
 
 This second command should create exactly the same document as that generated using the configured VScode-pandoc extension.
 
-## Set up Live Share for collaborative writing
+
+## Set up Github and Live Share for collaborative writing
 
 At this point, you know almost everything you need for single-author writing. At the very end of this tutorial, we'll see how to export to PDF and we'll discuss a few more cool functionalities of Markdown but the priority (and the promess) of this tutorial is to set up a **real-time collaborative writing** solution. 
+
+There are a bunch of ways to organize a collaborative writing workflow, but 
+
+## Additional tips
+
+#### How to manage 
