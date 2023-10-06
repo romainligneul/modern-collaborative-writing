@@ -116,15 +116,34 @@ Open a command line / terminal, `cd` to the directory containing *example.md* an
 By exporting in this way, you won't have a modifiable Zotero bibliography. But if you **really** love the command line, you can type:
 `pandoc example.md --bibliographic=C://whateverfoldername/zoteroMyLibrairy.bib --lua-filter=C://whateverfoldername/zotero.lua --metadata=zotero_scannable_cite:false --metadata=zotero_client:zotero --metadata=zotero_csl_style:apa --metadata=zotero_transferable:true -o example.docx`
 
-This second command should create exactly the same document as that generated using the configured VScode-pandoc extension.
+This second command should create exactly the same document as that generated using the configured VScode-pandoc extension. If you are running into problems, you might have more luck by cloning the git repository of this tutorial (see here)
 
 
 ## Set up Github and Live Share for collaborative writing
 
 At this point, you know almost everything you need for single-author writing. At the very end of this tutorial, we'll see how to export to PDF and we'll discuss a few more cool functionalities of Markdown but the priority (and the promess) of this tutorial is to set up a **real-time collaborative writing** solution. 
 
-There are a bunch of ways to organize a collaborative writing workflow, but 
+There are a bunch of ways to organize a collaborative writing workflow. Here, we'll stick to a relatively simple approach using Github for storing our document(s) and LiveShare to allow two persons to collaborate in real time on the same document. The exact same approach would work with Github alternatives such as Gitlab, Bitbucket, etc. However, a cool feature is that you can log into Live Share using your Github credentials. 
+
+Later on, we'll see how to go even further and see how to maintain a shared collection of PDFs across different authors.
+
+#### Github
+
+1. If you don't have Github, create an account. 
+2. Install the [Github CLI](https://cli.github.com/) utility that will allow you to connect your command line to your Github repository.
+3. Restart your terminal (or Visual Code), reopen it, and type `gh auth login`. Choose Github.com, HTTPS, Login with a web browser (or use an auth token if you prefer)
+4. CD to the directory where your *example.md* file is located and type `git init` in the command line. This preconfigures the folder as a Git repository.
+5. In Github, create a new repository. For example, name it "example-collaborative-writing". If you create a public repository, everyone on the web will be able to see the repository and its content. If you create a private repository, only the Github contact that you will manually add to the repository will be able to see it and its content. Most often, you'll want to create private repositories to work with specific colleagues.
+6. Back to your command line, type `git remote add origin https://github.com/yourGithubUsername/example-collaborative-writing.git` `git add .`, `git commit -m "first commit"`, `git branch -M main`, `git push -u origin main`. These steps are only needed for the creation of a new repository, then things will be much simpler. Refresh the web page of the newly create Github repository. You should see your *example.md* file appearing!
+
+Now, each time that you'll want to start working on the file(s) contained in the folder/repository, you'll have to type `git pull` in the command line (make sure that our command line points to the correct folder, if not, `cd` to it), make your modification and then type: `git add .`, `git commit -m "any message"`, `git push` to upload your changes. You speed up this process by using [this trick](#speed-up-the-saving-process-with-git)
 
 ## Additional tips
+
+#### Speed up the saving process with Git
+
+You can follow the instructions of [this tutorial](https://medium.com/@asciibi.dev/how-to-add-commit-and-push-to-git-using-one-command-on-windows-25d756f444b7) to create a little push.bat file and export it to the git repository.
+The repository of this tutorial already contains a gitpush.bat file, so feel free to use it (add it to your global OS path for use from any folder) by typing `gitpush "any message"` from the command line.
+This is exactly equivalent to writing: `git add .`, `git commit -m "any message"`, `git push`
 
 #### How to manage 
