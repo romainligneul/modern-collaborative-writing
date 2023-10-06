@@ -146,7 +146,33 @@ The only downside of this approach is that, when you disconnect from the session
 
 Another downside is that this approach does not solve the problem of shared Zotero bibliographies. While your collaborator will be able to add citation keys in the document, you'll need to have these keys in your own .bib file (i.e., this file arbitrarily named `zoteroMyLibrairy.bib` above) to be able to include them in the generated bibliography. To go beyond this limitation (that also exists using a Google Docs workflow), you'll need either to pay Zotero to set up Group Librairies or use your own (very modest) webserver. If you are a researcher, there are chances that your institution can provide you with a free webserver. Other, you can get one from a provider like [Vultr](vultr.com) or else.
 
-#### Live Share using a shared collection hack and webserver
+#### Live Share using a webserver and a shared collection hack
+
+If someone (you, your PI, your IT, who knows) run VScode on a remote server in a persistent fashion, you will be able to log in at any time into a persistent LiveShare session.
+Here, I won't cover the set up of a simple remote server, but many excellent tutorials are available for [Vultr](), [Google Cloud]() and many others. If you're team is not too big and if the only use of the server is for collaborative writing, you should be able to use a free or cheap plan at any operator.
+
+##### Steps to launch VScode remotely (only one collaborator should go through these steps: e.g. the PI)
+1. Assuming your remote server is Ubuntu-based, that it is running and that you have its command line opened in front of you, you need to install VS code by executing the following lines (you may embed them in a bash script)
+`sudo apt-get install wget gpg`
+`wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg`
+`sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg`
+`sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'`
+`rm -f packages.microsoft.gpg`
+`sudo apt install apt-transport-https`
+`sudo apt update`
+`sudo apt install code # or code-insiders`
+If you have a problem, try to follow these [instructions](https://code.visualstudio.com/docs/setup/linux) ; maybe some URLs of package names have been changed since I wrote this tutorial.
+
+2. Then, you'll have to install the command line interface (CLI) of Visual Code
+`curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz`
+`tar -xf vscode_cli.tar.gz`
+
+3. Finally, you'll just need to launch VScode with the "tunnel" option:
+`.\code tunnel`
+
+4. You'll be asked a few question (such as giving your tunnel a name) and then you'll be offered to visit the URL of your tunnelled instance. Click on the link provided. It should open a browser window in your local computer. If it does not, copy the link and paste it in your browser.  **Do not close** the terminal.
+
+5. You'll see a VScode environment in your browser that give you full access to your VScode instance as it is running in the server. The only thing we need to do here is to install the LiveShare Extension for this remote instance of VScode (as we did earlier in this tutorial), open a folder, create a LiveShare session (LiveShare icon --> Share button) and get the 
 
 
 ## Additional tips
