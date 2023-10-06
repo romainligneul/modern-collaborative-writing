@@ -111,7 +111,7 @@ Again, be <span style="color:red">consistent</span> with the actual path at whic
 
 #### Document generation using the command line
 
-Open a command line / terminal, `cd` to the directory containing *example.md* and type `pandoc example.md --bibliographic=C://whateverfoldername/zoteroMyLibrairy.bib --citeproc -o example.docx`
+Open a command line / terminal, `cd` to the directory containing *example.md* and type `pandoc example.md --bibliography=C://whateverfoldername/zoteroMyLibrairy.bib --citeproc -o example.docx`
 
 By exporting in this way, you won't have a modifiable Zotero bibliography. But if you **really** love the command line, you can type:
 `pandoc example.md --bibliographic=C://whateverfoldername/zoteroMyLibrairy.bib --lua-filter=C://whateverfoldername/zotero.lua --metadata=zotero_scannable_cite:false --metadata=zotero_client:zotero --metadata=zotero_csl_style:apa --metadata=zotero_transferable:true -o example.docx`
@@ -136,7 +136,18 @@ Later on, we'll see how to go even further and see how to maintain a shared coll
 5. In Github, create a new repository. For example, name it "example-collaborative-writing". If you create a public repository, everyone on the web will be able to see the repository and its content. If you create a private repository, only the Github contact that you will manually add to the repository will be able to see it and its content. Most often, you'll want to create private repositories to work with specific colleagues.
 6. Back to your command line, type `git remote add origin https://github.com/yourGithubUsername/example-collaborative-writing.git` `git add .`, `git commit -m "first commit"`, `git branch -M main`, `git push -u origin main`. These steps are only needed for the creation of a new repository, then things will be much simpler. Refresh the web page of the newly create Github repository. You should see your *example.md* file appearing!
 
-Now, each time that you'll want to start working on the file(s) contained in the folder/repository, you'll have to type `git pull` in the command line (make sure that our command line points to the correct folder, if not, `cd` to it), make your modification and then type: `git add .`, `git commit -m "any message"`, `git push` to upload your changes. You speed up this process by using [this trick](#speed-up-the-saving-process-with-git)
+Now, each time that you'll want to start working on the file(s) contained in the folder/repository, you'll have to type `git pull` in the command line (make sure that our command line points to the correct folder, if not, `cd` to it), make your modification and then type: `git add .`, `git commit -m "any message"`, `git push` to upload your changes. You may even speed up this process further by using [this trick](#speed-up-the-saving-process-with-git).
+
+#### Live Share using a simple connection
+
+To use Live Share in Visual Code, there is almost nothing to do. Just click on the Live Share icon in the sidebar (it's a curved arrow with a dot right below). Click the "Share" button: this will automatically add a *sharing link* to your clipboard that you can copy-paste and send it to anyone (through any messenging app or email). Those who receive the link can join the collaborative writing session by clicking the "Join" button and copy-pasting the link you've sent. Any change made to the opened document by your collaborator(s) is saved on *your* version of the file.
+
+The only downside of this approach is that, when you disconnect from the session, your collaborator will also be disconnected. So, make sure to run `git add .`, `git commit -m "any message"`, `git push` before disconnecting. If you do so, your collaborator(s) will be able to keep working on the documents by running a simple `git pull` command (they might first need to run `git clone https://github.com/yourGithubUsername/example-collaborative-writing.git` to get the repository on their own computer, if they did not do it yet).
+
+Another downside is that this approach does not solve the problem of shared Zotero bibliographies. While your collaborator will be able to add citation keys in the document, you'll need to have these keys in your own .bib file (i.e., this file arbitrarily named `zoteroMyLibrairy.bib` above) to be able to include them in the generated bibliography. To go beyond this limitation (that also exists using a Google Docs workflow), you'll need either to pay Zotero to set up Group Librairies or use your own (very modest) webserver. If you are a researcher, there are chances that your institution can provide you with a free webserver. Other, you can get one from a provider like [Vultr](vultr.com) or else.
+
+#### Live Share using a shared collection hack and webserver
+
 
 ## Additional tips
 
