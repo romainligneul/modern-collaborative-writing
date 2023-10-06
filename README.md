@@ -172,8 +172,11 @@ If you have a problem, try to follow these [instructions](https://code.visualstu
 
 4. You'll be asked a few question (such as giving your tunnel a name) and then you'll be offered to visit the URL of your tunnelled instance. Click on the link provided. It should open a browser window in your local computer. If it does not, copy the link and paste it in your browser.  **Do not close** the terminal.
 
-5. You'll see a VScode environment in your browser that give you full access to your VScode instance as it is running in the server. The only thing we need to do here is to install the LiveShare Extension for this remote instance of VScode (as we did earlier in this tutorial), open a folder, create a LiveShare session (LiveShare icon --> Share button) and get the 
+5. You'll see a VScode environment in your browser that give you full access to your VScode instance as it is running in the server. The only thing we need to do here is to install the LiveShare Extension for this remote instance of VScode (as we did earlier in this tutorial), open a folder, create a LiveShare session (LiveShare icon --> Share button) and get the link.
 
+##### Steps to join a VScode live session
+
+Joining the remote VScode session is extremely easy. You just have to use the link provided by the administrator or the session (i.e. the person who set it up using the instructions of the subsection above).
 
 ## Additional tips
 
